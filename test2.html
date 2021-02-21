@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <script src="js/jquery-3.5.1.js"></script>
+   
+    <title>Customer</title>
+
+    <script>
+      $(document).ready(function() {
+        
+    
+        getAllCustomers();        
+      });      
+      
+      function getAllCustomers() {
+
+    $.ajax({
+      type: "GET",
+      url: "api/customer.php?action=getAllCustomers&page=" + 1,
+      success: function (result) {
+        var stringified = JSON.stringify(result);
+        var data = JSON.parse(stringified);
+
+   console.log(data);
+
+        }
+        });
+      }
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
